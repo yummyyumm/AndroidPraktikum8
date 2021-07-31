@@ -1,10 +1,13 @@
 package com.example.androidpraktikum8.iu.user
 
-import android.service.autofill.UserData
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.androidpraktikum8.databinding.ItemRowUserBinding
+import com.example.androidpraktikum8.model.UserData
 
 class ListUserAdapter(private val listUser: ArrayList<com.example.androidpraktikum8.model.UserData>) : RecyclerView.Adapter<ListUserAdapter.ListViewHolder>() {
     class ListViewHolder(private val binding: ItemRowUserBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -12,6 +15,11 @@ class ListUserAdapter(private val listUser: ArrayList<com.example.androidpraktik
             with(binding){
                 tvItemName.text = userData.first_name + " " + userData.last_name
                 tvItemEmail.text = userData.email
+
+                Glide.with(itemView.context)
+                    .load(userData.avatar)
+                    .apply(RequestOptions().override(55, 55))
+                    .into(ivItemAvatar)
             }
         }
 
