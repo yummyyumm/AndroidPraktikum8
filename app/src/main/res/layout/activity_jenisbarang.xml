@@ -14,10 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+    <Button
+        android:id="@+id/btTambahJenisbarang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvJenisbarang"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         tools:listitem="@layout/item_row_jenisbarang" />
+
+
 
 </LinearLayout>
